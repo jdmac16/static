@@ -9,7 +9,7 @@ pipeline{
             stage('Upload to AWS') {
                 steps {
                         withAWS(region:'us-east-2', credentials:'aws-static') {
-                            s3Upload(file:'index.html', bucket:'machaudacity1', path:'')
+                            s3Upload(file:'index.html', bucket:'machaudacityproject3', path:'')
                         } 
                 }
             }
