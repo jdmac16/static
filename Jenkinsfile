@@ -1,4 +1,3 @@
-  
 pipeline{
         agent any
         stages {
@@ -9,12 +8,10 @@ pipeline{
             }
             stage('Upload to AWS') {
                 steps {
-                    retry(3){
-                        withAWS(region:'us-east-1', credentials:'aws-static'){
-                        s3Upload(file:'index.html', bucket:'machaudacityproject3', path:'')
-                    }                             
+                        withAWS(region:'us-east-2', credentials:'aws-static') {
+                            s3Upload(file:'index.html', bucket:'machaudacity1', path:'')
+                        } 
                 }
             }
         }
-    }
 }
