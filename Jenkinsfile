@@ -10,7 +10,7 @@ pipeline{
             stage('Upload to AWS') {
                 steps {
                     retry(3){
-                        withAWS(region:'us-east-2', credentials:'jenkins'){
+                        withAWS(region:'us-east-2', credentials:'aws-static'){
                         s3Upload(file:'index.html', bucket:'machaudacityproject3', path:'')
                     }                             
                 }
